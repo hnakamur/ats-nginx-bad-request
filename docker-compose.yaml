@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  nginx:
+    build:
+      context: ./nginx
+  ats:
+    build:
+      context: ./ats
+    depends_on:
+      - nginx
+  # hey:
+  #   build:
+  #     context: ./hey
+  #   depends_on:
+  #     - ats
+  curl:
+    image: curlimages/curl:8.5.0
+    command: curl -sSD - http://ats
+    depends_on:
+      - ats
