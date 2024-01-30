@@ -1,5 +1,5 @@
 run:
-	docker compose up -d
+	docker compose up -d --build
 	docker compose wait hey
 	docker compose logs hey
 	docker compose cp ats:/opt/trafficserver/var/log/proxy.ltsv.log proxy.ltsv.log

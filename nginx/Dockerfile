@@ -1,4 +1,4 @@
-FROM nginx:1.25.3
+FROM nginx:1.24.0-bullseye
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get -y install tcpdump
