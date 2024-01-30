@@ -8,13 +8,14 @@ services:
       context: ./ats
     depends_on:
       - nginx
-  # hey:
-  #   build:
-  #     context: ./hey
-  #   depends_on:
-  #     - ats
-  curl:
-    image: curlimages/curl:8.5.0
-    command: curl -sSD - http://ats
+  hey:
+    build:
+      context: ./hey
+    command: /go/bin/hey -c 10 -q 10 -z 5s -m PUT -D /src/a-1KiB.dat -random-request-id http://ats
     depends_on:
       - ats
+  # curl:
+  #   image: curlimages/curl:8.5.0
+  #   command: curl -sSD - http://ats
+  #   depends_on:
+  #     - ats
