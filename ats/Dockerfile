@@ -63,4 +63,8 @@ COPY logging.yaml remap.config records.yaml /opt/trafficserver/etc/
 RUN useradd -m -d /opt/trafficserver -s /bin/bash trafficserver
 RUN chown -R trafficserver:trafficserver /opt/trafficserver/var
 
-CMD ["/opt/trafficserver/bin/traffic_server"]
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tcpdump
+
+COPY startup.sh /usr/local/bin/
+
+CMD ["/usr/local/bin/startup.sh"]
