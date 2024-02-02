@@ -3,6 +3,8 @@ services:
   nginx:
     build:
       context: ./nginx
+    volumes:
+      - .:/data
     ulimits:
       nofile:
         soft: 65535
@@ -14,12 +16,14 @@ services:
       nofile:
         soft: 65535
         hard: 65535
+    volumes:
+      - .:/data
     depends_on:
       - nginx
   hey:
     build:
       context: ./hey
-    command: /go/bin/hey -c 40 -q 40 -z 5s -m PUT -D /src/a-1KiB.dat -random-request-id http://ats
+    command: /go/bin/hey -c 32 -q 64 -z 2s -m PUT -D /src/hex-1KiB.dat -random-request-id http://ats
     ulimits:
       nofile:
         soft: 65535

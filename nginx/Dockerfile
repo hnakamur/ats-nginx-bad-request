@@ -51,8 +51,7 @@ COPY nginx.conf /etc/nginx/
 COPY default.conf /etc/nginx/conf.d/
 COPY *.html /var/www/html/
 
+RUN mkdir /data
 COPY startup.sh /usr/local/bin/
-
-# RUN rm -f /var/log/nginx/access.log /var/log/nginx/error.log
 
 CMD ["/usr/local/bin/startup.sh"]

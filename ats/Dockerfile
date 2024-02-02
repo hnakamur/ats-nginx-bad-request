@@ -65,6 +65,8 @@ RUN chown -R trafficserver:trafficserver /opt/trafficserver/var
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tcpdump
 
+RUN mkdir /data
+RUN ln -s /data/proxy.ltsv.log /opt/trafficserver/var/log/
 COPY startup.sh /usr/local/bin/
 
 CMD ["/usr/local/bin/startup.sh"]
