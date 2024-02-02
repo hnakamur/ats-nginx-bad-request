@@ -11,7 +11,7 @@ services:
   hey:
     build:
       context: ./hey
-    command: /go/bin/hey -c 10 -q 10 -z 5s -m PUT -D /src/a-1KiB.dat -random-request-id http://ats
+    command: /go/bin/hey -c 20 -q 10 -z 5s -m PUT -D /src/a-1KiB.dat -random-request-id http://ats
     depends_on:
       - ats
   # curl:
