@@ -3,15 +3,27 @@ services:
   nginx:
     build:
       context: ./nginx
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
   ats:
     build:
       context: ./ats
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
     depends_on:
       - nginx
   hey:
     build:
       context: ./hey
-    command: /go/bin/hey -c 20 -q 10 -z 5s -m PUT -D /src/a-1KiB.dat -random-request-id http://ats
+    command: /go/bin/hey -c 40 -q 40 -z 5s -m PUT -D /src/a-1KiB.dat -random-request-id http://ats
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
     depends_on:
       - ats
   # curl:
