@@ -114,7 +114,7 @@ ts:
 #     https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy-config-http-insert-response-via-str
 ##############################################################################
     insert_request_via_str: 1
-    insert_response_via_str: 0
+    insert_response_via_str: 3
     insert_squid_x_forwarded_for: 1
     keep_alive_no_activity_timeout_in: 120
     keep_alive_no_activity_timeout_out: 120

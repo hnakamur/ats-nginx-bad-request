@@ -6,7 +6,7 @@ run:
 	docker compose logs --no-log-prefix hey > hey.log
 	docker compose logs --no-log-prefix ats > ats.log
 	docker compose logs --no-log-prefix nginx > nginx.log
-	docker compose stop --timeout 2
+	docker compose stop --timeout 3
 	sudo chown $${USER}: *.log *.pcap
 	zstd -z -19 --rm ats.log
 
