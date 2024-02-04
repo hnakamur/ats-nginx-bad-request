@@ -7,4 +7,4 @@ WORKDIR /src/hey
 RUN go install -tags netgo ./...
 
 WORKDIR /src
-RUN bash -c 'for i in {1..1024}; do echo -n a >> a-1KiB.dat; done'
+RUN bash -c 'for i in {1..64}; do for j in {0..15}; do printf %x $j >> hex-1KiB.dat; done; done'

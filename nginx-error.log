@@ -1,0 +1,41 @@
+2024/02/03 02:14:27 [notice] 9#9: using the "epoll" event method
+2024/02/03 02:14:27 [notice] 9#9: nginx/1.25.3
+2024/02/03 02:14:27 [notice] 9#9: built by gcc 12.2.0 (Debian 12.2.0-14) 
+2024/02/03 02:14:27 [notice] 9#9: OS: Linux 6.1.0-17-amd64
+2024/02/03 02:14:27 [notice] 9#9: getrlimit(RLIMIT_NOFILE): 65535:65535
+2024/02/03 02:14:27 [notice] 9#9: start worker processes
+2024/02/03 02:14:27 [notice] 9#9: start worker process 10
+2024/02/03 02:14:27 [notice] 9#9: start worker process 11
+2024/02/03 02:14:30 [info] 11#11: *16 client sent invalid method while reading client request line, client: 172.18.0.3, server: localhost, request: "789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+2024/02/03 02:14:32 [info] 10#10: *34 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *33 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *32 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *31 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *30 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *29 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *28 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *27 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *24 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *25 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *20 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *23 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *18 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *19 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *35 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *21 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *15 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *14 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *8 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *13 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *12 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *6 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *9 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *10 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *11 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *7 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *3 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *26 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *4 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 11#11: *2 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *22 client 172.18.0.3 closed keepalive connection
+2024/02/03 02:14:32 [info] 10#10: *1 client 172.18.0.3 closed keepalive connection

@@ -4,7 +4,7 @@ FROM ubuntu:22.04
 # Apapted from
 # https://github.com/apache/trafficserver/blob/e4ff6cab0713f25290a62aba74b8e1a595b7bc30/ci/docker/deb/Dockerfile#L46-L58
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata apt-utils git && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install tzdata apt-utils curl && \
     # Compilers
     DEBIAN_FRONTEND=noninteractive apt-get -y install \
     ccache pkgconf bison flex gettext libc++-dev \
@@ -31,7 +31,10 @@ RUN useradd -m -d ${SRC_DIR} -s /bin/bash ${BUILD_USER}
 
 USER ${BUILD_USER}
 WORKDIR ${SRC_DIR}
-RUN git clone --depth 1 https://github.com/apache/trafficserver
+RUN mkdir ${SRC_DIR}/trafficserver
+
+ARG GIT_COMMIT=04df94d8a09f0313f741ed013c0cc47480662d53
+RUN curl -sSL https://github.com/apache/trafficserver/archive/${GIT_COMMIT}.tar.gz | tar zxf - --strip-component=1 -C ${SRC_DIR}/trafficserver
 WORKDIR ${SRC_DIR}/trafficserver
 ARG BUILD_DIR=/src/trafficserver/build
 RUN cmake -B ${BUILD_DIR} -G Ninja \
@@ -65,6 +68,8 @@ RUN chown -R trafficserver:trafficserver /opt/trafficserver/var
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tcpdump
 
+RUN mkdir /data
+RUN ln -s /data/proxy.ltsv.log /opt/trafficserver/var/log/
 COPY startup.sh /usr/local/bin/
 
 CMD ["/usr/local/bin/startup.sh"]
