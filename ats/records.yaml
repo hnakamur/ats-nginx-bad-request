@@ -41,7 +41,7 @@ ts:
 ##############################################################################
   diags:
     debug:
-      enabled: 0
+      enabled: 1
       tags: http|dns
 
 #    https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy-config-dump-mem-info-frequency

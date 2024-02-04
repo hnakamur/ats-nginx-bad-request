@@ -70,6 +70,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tcpdump
 
 RUN mkdir /data
 RUN ln -s /data/proxy.ltsv.log /opt/trafficserver/var/log/
+RUN ln -s /data/ats-diags.log /opt/trafficserver/var/log/diags.log
+RUN ln -s /data/ats-error.log /opt/trafficserver/var/log/error.log
 COPY startup.sh /usr/local/bin/
 
 CMD ["/usr/local/bin/startup.sh"]

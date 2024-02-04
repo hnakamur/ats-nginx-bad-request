@@ -23,7 +23,7 @@ services:
   hey:
     build:
       context: ./hey
-    command: /go/bin/hey -c 32 -q 32 -z 2s -m PUT -D /src/hex-1KiB.dat -random-request-id http://ats
+    command: /go/bin/hey -c 32 -q 8 -z 1s -m PUT -D /src/hex-1KiB.dat -random-request-id http://ats
     ulimits:
       nofile:
         soft: 65535
