@@ -33,35 +33,37 @@ USER ${BUILD_USER}
 WORKDIR ${SRC_DIR}
 RUN mkdir ${SRC_DIR}/trafficserver
 
-ARG GIT_COMMIT=fbd21285153c7a2814724bf2cb1cd8a0cde45cc3
+ARG GIT_COMMIT=b4e3c73354d2a104ed6f00379eeb9f121a85e8bb
 RUN curl -sSL https://github.com/apache/trafficserver/archive/${GIT_COMMIT}.tar.gz | tar zxf - --strip-component=1 -C ${SRC_DIR}/trafficserver
 WORKDIR ${SRC_DIR}/trafficserver
 ARG BUILD_DIR=/src/trafficserver/build
-RUN cmake -B ${BUILD_DIR} -G Ninja \
-	-DCMAKE_BUILD_TYPE=Release \
-	-DCMAKE_INSTALL_PREFIX=/opt/trafficserver \
-	-DCMAKE_INSTALL_BINDIR=bin \
-	-DCMAKE_INSTALL_SBINDIR=bin \
-	-DCMAKE_INSTALL_LIBDIR=lib \
-	-DCMAKE_INSTALL_LIBEXECDIR=lib/modules \
-	-DCMAKE_INSTALL_SYSCONFDIR=etc \
-	-DCMAKE_INSTALL_LOCALSTATEDIR=var \
-	-DCMAKE_INSTALL_RUNSTATEDIR=var/run \
-	-DCMAKE_INSTALL_DATAROOTDIR=share \
-	-DCMAKE_INSTALL_DATADIR=share/data \
-	-DCMAKE_INSTALL_DOCDIR=share/doc \
-	-DCMAKE_INSTALL_LOGDIR=var/log \
-	-DCMAKE_INSTALL_CACHEDIR=var/cache \
-	-DBUILD_EXPERIMENTAL_PLUGINS=ON \
-	-DENABLE_MAXMIND_ACL=ON \
-	-DENABLE_URI_SIGNING=ON \
-	-DENABLE_JEMALLOC=ON \
-	-DENABLE_AUTEST=ON
-RUN cmake --build ${BUILD_DIR} --parallel --verbose
+RUN autoreconf -if
+RUN ./configure \
+    --enable-layout=opt \
+	--prefix=/opt/trafficserver \
+	--includedir=/usr/include \
+	--datarootdir=/usr/share \
+	--datadir=/usr/share \
+	--infodir=/usr/share/info \
+	--localedir=/usr/share/locale \
+	--mandir=/usr/share/man \
+	--docdir=/usr/share/doc/trafficserver \
+	--htmldir=/usr/share/doc/trafficserver \
+	--dvidir=/usr/share/doc/trafficserver \
+	--pdfdir=/usr/share/doc/trafficserver \
+	--psdir=/usr/share/doc/trafficserver \
+	--exec-prefix=/usr \
+	--sysconfdir=/opt/trafficserver/etc --libdir=/usr/lib/trafficserver \
+	--localstatedir=/opt/trafficserver/var \
+	--libexecdir=/usr/lib/trafficserver/modules \
+	--with-user=root --with-group=root --disable-silent-rules \
+	--enable-experimental-plugins --enable-32bit-build \
+	--with-brotli=/usr/include
+RUN make -j
 
 USER root
-RUN cmake --install ${BUILD_DIR}
-COPY logging.yaml remap.config records.yaml /opt/trafficserver/etc/
+RUN make install
+COPY logging.yaml remap.config records.config /opt/trafficserver/etc/
 
 RUN useradd -m -d /opt/trafficserver -s /bin/bash trafficserver
 RUN chown -R trafficserver:trafficserver /opt/trafficserver/var
@@ -69,9 +71,9 @@ RUN chown -R trafficserver:trafficserver /opt/trafficserver/var
 RUN DEBIAN_FRONTEND=noninteractive apt-get -y install tcpdump
 
 RUN mkdir /data
-RUN ln -s /data/proxy.ltsv.log /opt/trafficserver/var/log/
-RUN ln -s /data/ats-diags.log /opt/trafficserver/var/log/diags.log
-RUN ln -s /data/ats-error.log /opt/trafficserver/var/log/error.log
+RUN ln -s /data/proxy.ltsv.log /opt/trafficserver/var/logs/
+RUN ln -s /data/ats-diags.log /opt/trafficserver/var/logs/diags.log
+RUN ln -s /data/ats-error.log /opt/trafficserver/var/logs/error.log
 COPY startup.sh /usr/local/bin/
 
 CMD ["/usr/local/bin/startup.sh"]
