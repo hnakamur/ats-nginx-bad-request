@@ -33,8 +33,7 @@ USER ${BUILD_USER}
 WORKDIR ${SRC_DIR}
 RUN mkdir ${SRC_DIR}/trafficserver
 
-ARG GIT_COMMIT=fbd21285153c7a2814724bf2cb1cd8a0cde45cc3
-RUN curl -sSL https://github.com/apache/trafficserver/archive/${GIT_COMMIT}.tar.gz | tar zxf - --strip-component=1 -C ${SRC_DIR}/trafficserver
+COPY trafficserver ${SRC_DIR}/trafficserver
 WORKDIR ${SRC_DIR}/trafficserver
 ARG BUILD_DIR=/src/trafficserver/build
 RUN cmake -B ${BUILD_DIR} -G Ninja \

@@ -1,0 +1,3 @@
+[submodule "ats/trafficserver"]
+	path = ats/trafficserver
+	url = https://github.com/hnakamur/trafficserver
