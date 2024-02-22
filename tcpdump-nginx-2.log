@@ -1,0 +1,185 @@
+19:30:27.729053 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [S], seq 3755397642, win 64240, options [mss 1460,sackOK,TS val 3828854477 ecr 0,nop,wscale 7], length 0
+.......&.....B......E..<..@.@..............P...
+........XX.........
+.7..........
+19:30:27.729068 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [S.], seq 2414246945, ack 3755397643, win 65160, options [mss 1460,sackOK,TS val 34192778 ecr 3828854477,nop,wscale 7], length 0
+.......&.....B......E..<..@.@............P....|!........XX.........
+.	...7......
+19:30:27.729086 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [.], ack 1, win 502, options [nop,nop,TS val 3828854477 ecr 34192778], length 0
+.......&.....B......E..4..@.@..............P......|"....XP.....
+.7...	..
+19:30:27.731233 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 1:322, ack 1, win 502, options [nop,nop,TS val 3828854479 ecr 34192778], length 321: HTTP: PUT / HTTP/1.1
+.......&.....B......E..u..@.@..............P......|"....Y......
+.7...	..PUT / HTTP/1.1
+Host: nginx
+User-Agent: hey/0.0.1
+Content-Length: 1024
+Content-Type: text/html
+X-Request-Id: 9775f7d1d9d97822d0a5a06d94550e37
+Accept-Encoding: gzip
+Client-ip: 172.18.0.4
+X-Forwarded-For: 172.18.0.4
+Via: http/1.1 traffic_server[729b6a4d-bc49-4581-a05d-159b746c5f49] (ApacheTrafficServer/10.0.0)
+
+
+19:30:27.731244 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [.], ack 322, win 507, options [nop,nop,TS val 34192780 ecr 3828854479], length 0
+.......&.....B......E..4Q4@.@..f.........P....|"...L....XP.....
+.	...7..
+19:30:27.731500 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 322:1346, ack 1, win 502, options [nop,nop,TS val 3828854480 ecr 34192780], length 1024: HTTP
+.......&.....B......E..4..@.@..............P...L..|"....\P.....
+.7...	..0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+19:30:27.731508 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [.], ack 1346, win 501, options [nop,nop,TS val 34192781 ecr 3828854480], length 0
+.......&.....B......E..4Q5@.@..e.........P....|"...L....XP.....
+.	...7..
+19:30:27.731667 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [P.], seq 1:363, ack 1346, win 501, options [nop,nop,TS val 34192781 ecr 3828854480], length 362: HTTP: HTTP/1.1 405 Not Allowed
+.......&.....B......E...Q6@.@............P....|"...L....Y......
+.	...7..HTTP/1.1 405 Not Allowed
+Server: nginx/1.25.3
+Date: Wed, 21 Feb 2024 10:30:27 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: keep-alive
+x_request_id: 9775f7d1d9d97822d0a5a06d94550e37
+
+<html>
+<head><title>405 Not Allowed</title></head>
+<body>
+<center><h1>405 Not Allowed</h1></center>
+<hr><center>nginx/1.25.3</center>
+</body>
+</html>
+
+19:30:27.731680 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [.], ack 363, win 501, options [nop,nop,TS val 3828854480 ecr 34192781], length 0
+.......&.....B......E..4..@.@..............P...L..}.....XP.....
+.7...	..
+19:30:27.817096 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 1346:1667, ack 363, win 501, options [nop,nop,TS val 3828854565 ecr 34192781], length 321: HTTP: PUT / HTTP/1.1
+.......&.....B......E..u..@.@..}...........P...L..}.....Y......
+.7.%.	..PUT / HTTP/1.1
+Host: nginx
+User-Agent: hey/0.0.1
+Content-Length: 1024
+Content-Type: text/html
+X-Request-Id: a735b0ff23aa124f19ccb6e220e729d4
+Accept-Encoding: gzip
+Client-ip: 172.18.0.4
+X-Forwarded-For: 172.18.0.4
+Via: http/1.1 traffic_server[729b6a4d-bc49-4581-a05d-159b746c5f49] (ApacheTrafficServer/10.0.0)
+
+
+19:30:27.818896 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 1667:2691, ack 363, win 501, options [nop,nop,TS val 3828854567 ecr 34192781], length 1024: HTTP
+.......&.....B......E..4..@.@..............P......}.....\P.....
+.7.'.	..0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+19:30:27.818901 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [.], ack 2691, win 501, options [nop,nop,TS val 34192868 ecr 3828854565], length 0
+.......&.....B......E..4Q7@.@..c.........P....}.........XP.....
+.	...7.%
+19:30:27.819305 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [P.], seq 363:725, ack 2691, win 501, options [nop,nop,TS val 34192869 ecr 3828854565], length 362: HTTP: HTTP/1.1 405 Not Allowed
+.......&.....B......E...Q8@.@............P....}.........Y......
+.	...7.%HTTP/1.1 405 Not Allowed
+Server: nginx/1.25.3
+Date: Wed, 21 Feb 2024 10:30:27 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: keep-alive
+x_request_id: a735b0ff23aa124f19ccb6e220e729d4
+
+<html>
+<head><title>405 Not Allowed</title></head>
+<body>
+<center><h1>405 Not Allowed</h1></center>
+<hr><center>nginx/1.25.3</center>
+</body>
+</html>
+
+19:30:27.819323 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [.], ack 725, win 501, options [nop,nop,TS val 3828854568 ecr 34192869], length 0
+.......&.....B......E..4..@.@..............P......~.....XP.....
+.7.(.	..
+19:30:27.959781 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 2691:3012, ack 725, win 501, options [nop,nop,TS val 3828854708 ecr 34192869], length 321: HTTP: PUT / HTTP/1.1
+.......&.....B......E..u..@.@..z...........P......~.....Y......
+.7...	..PUT / HTTP/1.1
+Host: nginx
+User-Agent: hey/0.0.1
+Content-Length: 1024
+Content-Type: text/html
+X-Request-Id: 03de013d2248caa2171c842ac12c20fb
+Accept-Encoding: gzip
+Client-ip: 172.18.0.4
+X-Forwarded-For: 172.18.0.4
+Via: http/1.1 traffic_server[729b6a4d-bc49-4581-a05d-159b746c5f49] (ApacheTrafficServer/10.0.0)
+
+
+19:30:27.959882 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [P.], seq 725:1087, ack 3012, win 501, options [nop,nop,TS val 34193009 ecr 3828854708], length 362: HTTP: HTTP/1.1 405 Not Allowed
+.......&.....B......E...Q9@.@............P....~.........Y......
+.	.q.7..HTTP/1.1 405 Not Allowed
+Server: nginx/1.25.3
+Date: Wed, 21 Feb 2024 10:30:27 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: keep-alive
+x_request_id: 03de013d2248caa2171c842ac12c20fb
+
+<html>
+<head><title>405 Not Allowed</title></head>
+<body>
+<center><h1>405 Not Allowed</h1></center>
+<hr><center>nginx/1.25.3</center>
+</body>
+</html>
+
+19:30:27.959887 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [.], ack 1087, win 501, options [nop,nop,TS val 3828854708 ecr 34193009], length 0
+.......&.....B......E..4..@.@..............P.......`....XP.....
+.7...	.q
+19:30:27.959908 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 3012:3356, ack 1087, win 501, options [nop,nop,TS val 3828854708 ecr 34193009], length 344: HTTP
+.......&.....B......E.....@.@..a...........P.......`....Y......
+.7...	.q0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef01234567
+19:30:28.001355 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [.], ack 3356, win 501, options [nop,nop,TS val 34193051 ecr 3828854708], length 0
+.......&.....B......E..4Q:@.@..`.........P.....`...&....XP.....
+.	...7..
+19:30:28.050461 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 3356:3677, ack 1087, win 501, options [nop,nop,TS val 3828854799 ecr 34193051], length 321: HTTP: PUT / HTTP/1.1
+.......&.....B......E..u..@.@..w...........P...&...`....Y......
+.7...	..PUT / HTTP/1.1
+Host: nginx
+User-Agent: hey/0.0.1
+Content-Length: 1024
+Content-Type: text/html
+X-Request-Id: ec39a72a034820b6edc483c8088f0eeb
+Accept-Encoding: gzip
+Client-ip: 172.18.0.4
+X-Forwarded-For: 172.18.0.4
+Via: http/1.1 traffic_server[729b6a4d-bc49-4581-a05d-159b746c5f49] (ApacheTrafficServer/10.0.0)
+
+
+19:30:28.050468 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [.], ack 3677, win 501, options [nop,nop,TS val 34193100 ecr 3828854799], length 0
+.......&.....B......E..4Q;@.@.._.........P.....`...g....XP.....
+.	...7..
+19:30:28.051001 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [P.], seq 3677:4701, ack 1087, win 501, options [nop,nop,TS val 3828854799 ecr 34193100], length 1024: HTTP
+.......&.....B......E..4..@.@..............P...g...`....\P.....
+.7...	..0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+19:30:28.051006 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [.], ack 4701, win 501, options [nop,nop,TS val 34193100 ecr 3828854799], length 0
+.......&.....B......E..4Q<@.@..^.........P.....`...g....XP.....
+.	...7..
+19:30:28.051669 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [P.], seq 1087:1396, ack 4701, win 501, options [nop,nop,TS val 34193101 ecr 3828854799], length 309: HTTP: HTTP/1.1 400 Bad Request
+.......&.....B......E..iQ=@.@..(.........P.....`...g....Y......
+.	...7..HTTP/1.1 400 Bad Request
+Server: nginx/1.25.3
+Date: Wed, 21 Feb 2024 10:30:28 GMT
+Content-Type: text/html
+Content-Length: 157
+Connection: close
+
+<html>
+<head><title>400 Bad Request</title></head>
+<body>
+<center><h1>400 Bad Request</h1></center>
+<hr><center>nginx/1.25.3</center>
+</body>
+</html>
+
+19:30:28.051692 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [F.], seq 1396, ack 4701, win 501, options [nop,nop,TS val 34193101 ecr 3828854799], length 0
+.......&.....B......E..4Q>@.@..\.........P.........g....XP.....
+.	...7..
+19:30:28.054027 ?     In  IP 172.18.0.3.58358 > 172.18.0.2.80: Flags [F.], seq 4701, ack 1397, win 501, options [nop,nop,TS val 3828854802 ecr 34193101], length 0
+.......&.....B......E..4..@.@..............P...g........XP.....
+.7...	..
+19:30:28.054034 ?     Out IP 172.18.0.2.80 > 172.18.0.3.58358: Flags [.], ack 4702, win 501, options [nop,nop,TS val 34193103 ecr 3828854802], length 0
+.......&.....B......E..4Q?@.@..[.........P.........h....XP.....
+.	...7..
