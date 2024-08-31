@@ -4,12 +4,8 @@
 #    https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html
 ##############################################################################
 
-ts:
+records:
   accept_threads: 1
-
-  admin:
-    user_id: trafficserver
-
   cache:
     limits:
       http:
@@ -41,7 +37,7 @@ ts:
 ##############################################################################
   diags:
     debug:
-      enabled: 1
+      enabled: 0
       tags: http|dns
 
 #    https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy-config-dump-mem-info-frequency
@@ -145,7 +141,7 @@ ts:
 # Specify server addresses and ports to bind for HTTP and HTTPS. Docs:
 #    https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy.config.http.server_ports
 ##############################################################################
-    server_ports: 80 80:ipv6
+    server_ports: 8080 8080:ipv6
 
 #    https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy-config-http-slow-log-threshold
     slow:
@@ -173,9 +169,9 @@ ts:
     max_space_mb_for_logs: 25000
     max_space_mb_headroom: 1000
     periodic_tasks_interval: 5
-    rolling_enabled: 0
-    logfile_dir: /opt/trafficserver/var/log
-    max_secs_per_buffer: 1
+    rolling_enabled: 1
+    rolling_interval_sec: 86400
+    rolling_size_mb: 10
 
 ##############################################################################
 # Network. Docs:
@@ -220,3 +216,8 @@ ts:
 # https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy-config-url-remap-pristine-host-hdr
     pristine_host_hdr: 0
     remap_required: 1
+    acl_behavior_policy: 0
+
+# https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#management
+  admin:
+    user_id: trafficserver
