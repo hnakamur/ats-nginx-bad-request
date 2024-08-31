@@ -33,12 +33,13 @@ USER ${BUILD_USER}
 WORKDIR ${SRC_DIR}
 RUN mkdir ${SRC_DIR}/trafficserver
 
-ARG GIT_COMMIT=63bb35dfa7926f468f66e0f2279dd5b529a18a84
-RUN curl -sSL https://github.com/apache/trafficserver/archive/${GIT_COMMIT}.tar.gz | tar zxf - --strip-component=1 -C ${SRC_DIR}/trafficserver
+ARG GIT_COMMIT=6c72cd7740c34977c71c0bee1466fa7345b1eff8
+RUN curl -sSL https://github.com/hnakamur/trafficserver/archive/${GIT_COMMIT}.tar.gz | tar zxf - --strip-component=1 -C ${SRC_DIR}/trafficserver
 WORKDIR ${SRC_DIR}/trafficserver
 ARG BUILD_DIR=/src/trafficserver/build
 RUN cmake -B ${BUILD_DIR} -G Ninja \
-	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+        -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG" \
 	-DCMAKE_INSTALL_PREFIX=/opt/trafficserver \
 	-DCMAKE_INSTALL_BINDIR=bin \
 	-DCMAKE_INSTALL_SBINDIR=bin \
