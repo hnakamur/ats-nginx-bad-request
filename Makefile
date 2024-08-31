@@ -8,6 +8,6 @@ run:
 	docker compose logs --no-log-prefix nginx > nginx.log
 	docker compose stop --timeout 2
 	sudo chown $${USER}: *.log *.pcap
-	zstd -z -19 --rm ats.log
+	zstd -z -19 --rm -f ats.log
 
 .PHONY: run
