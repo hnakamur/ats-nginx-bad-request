@@ -141,7 +141,7 @@ records:
 # Specify server addresses and ports to bind for HTTP and HTTPS. Docs:
 #    https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy.config.http.server_ports
 ##############################################################################
-    server_ports: 8080 8080:ipv6
+    server_ports: 80 80:ipv6
 
 #    https://docs.trafficserver.apache.org/en/latest/admin-guide/files/records.yaml.en.html#proxy-config-http-slow-log-threshold
     slow:
