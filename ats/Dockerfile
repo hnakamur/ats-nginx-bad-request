@@ -38,7 +38,9 @@ RUN curl -sSL https://github.com/apache/trafficserver/archive/${GIT_COMMIT}.tar.
 WORKDIR ${SRC_DIR}/trafficserver
 ARG BUILD_DIR=/src/trafficserver/build
 RUN cmake -B ${BUILD_DIR} -G Ninja \
-	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_BUILD_TYPE=Debug \
+	-DCMAKE_CXX_FLAGS_DEBUG="-g -fsanitize=thread" \
+	-DCMAKE_C_FLAGS_DEBUG="-g -fsanitize=thread" \
 	-DCMAKE_INSTALL_PREFIX=/opt/trafficserver \
 	-DCMAKE_INSTALL_BINDIR=bin \
 	-DCMAKE_INSTALL_SBINDIR=bin \
@@ -56,7 +58,7 @@ RUN cmake -B ${BUILD_DIR} -G Ninja \
 	-DENABLE_MAXMIND_ACL=ON \
 	-DENABLE_URI_SIGNING=ON \
 	-DENABLE_JEMALLOC=ON \
-	-DENABLE_AUTEST=ON
+	-DENABLE_AUTEST=OFF
 RUN cmake --build ${BUILD_DIR} --parallel --verbose
 
 USER root
