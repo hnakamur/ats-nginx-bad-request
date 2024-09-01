@@ -54,6 +54,7 @@ records:
       scale: 1.0
     limit: 2
   http:
+    request_buffer_enabled: 1
     accept_no_activity_timeout: 120
     cache:
       cache_responses_to_cookies: 1
