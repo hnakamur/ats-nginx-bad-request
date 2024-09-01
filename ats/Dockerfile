@@ -33,7 +33,7 @@ USER ${BUILD_USER}
 WORKDIR ${SRC_DIR}
 RUN mkdir ${SRC_DIR}/trafficserver
 
-ARG GIT_COMMIT=f359acd5e9dedf5ca51c7e20f16d2fa740ac92e3
+ARG GIT_COMMIT=58de5a14c78280f891216b79cc17a46940bc83b9
 RUN curl -sSL https://github.com/hnakamur/trafficserver/archive/${GIT_COMMIT}.tar.gz | tar zxf - --strip-component=1 -C ${SRC_DIR}/trafficserver
 WORKDIR ${SRC_DIR}/trafficserver
 ARG BUILD_DIR=/src/trafficserver/build
